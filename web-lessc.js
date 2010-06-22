@@ -7,7 +7,7 @@ var less = require('less'),
     fs = require('fs'),
     path = require('path');
 
-PORT = 8124;
+PORT = 21383;
 ACCEPT = 'text/x-less; q=1.0, text/less; q=1.0, text/css; q=0.9, '
        + 'text/*; q=0.5, */*; q=0.1';
 README_PATH = path.join(__dirname, 'README.md');
@@ -110,11 +110,12 @@ http.createServer(function (req, res) {
     });
     client_req.end();
   } else {
-    var host = req.headers['Host'] || req.headers['HOST'] ||
-               req.headers['host'];
+    var host = req.headers['x-forwarded-host'] || req.headers['host'];
+    var path = url.parse(req.url).pathname;
     res.writeHead(500, { 'Content-Type': 'text/css' });
     var readme = fs.readFileSync(README_PATH).toString();
-    readme = readme.replace(/\{\{[[:space:]]*host[[:space:]]*\}\}/g, host);
+    readme = readme.replace(/(Host: *)dahlia\.ruree\.net/g, '$1' + host);
+    readme = readme.replace(/( +)\/lessc\//g, '$1' + path);
     res.end('/*\n' + readme + '\n*/');
   }
 }).listen(PORT);

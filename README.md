@@ -34,15 +34,15 @@ Parameters
 Example: `GET`
 --------------
 
-    GET /?url=http:%2F%2Fyoursite.com%2Ffile.less HTTP/1.1
-    Host: {{ host }}
+    GET /lessc/?url=http:%2F%2Fyoursite.com%2Ffile.less HTTP/1.1
+    Host: dahlia.ruree.net
 
 
 Example `POST`
 --------------
 
-    POST / HTTP/1.1
-    Host: {{ host }}
+    POST /lessc/ HTTP/1.1
+    Host: dahlia.ruree.net
 
     .your.less-code { goes: here }
 
