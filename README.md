@@ -47,7 +47,7 @@ Example `POST`
     .your.less-code { goes: here }
 
 
-When Errored
+When errored
 ------------
 
     HTTP/1.1 500 Internal Server Error
@@ -61,4 +61,13 @@ When Errored
     1 a {
          ^
     ...
+
+
+Author and source code
+----------------------
+
+The author is Hong, MinHee. <http://dahlia.kr/>
+
+Source code is available on its repository under Public Domain license.
+<http://github.com/dahlia/web-lessc>
 
