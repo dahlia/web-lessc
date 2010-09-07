@@ -1,4 +1,3 @@
-
 web-lessc: A simple HTTP API of [LESS][] compiler
 =================================================
 
@@ -66,7 +65,7 @@ When errored
 Author and source code
 ----------------------
 
-The author is Hong, MinHee. <http://dahlia.kr/>
+The author is Hong Minhee. <http://dahlia.kr/>
 
 Source code is available on its repository under Public Domain license.
 <http://github.com/dahlia/web-lessc>
